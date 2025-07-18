@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import com.example.demo.Services.UserService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,5 +31,10 @@ public class UserController2 {
 	public String login(@RequestBody Userss2 userss) {
 		System.out.println("Loginnnnnnnnnnn");
 		return userService2.login(userss);
+	}
+	
+	@GetMapping("/healthChecker")
+	public String healhChecker() {
+		return "Application is up";
 	}
 }
